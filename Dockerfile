@@ -6,7 +6,6 @@
 FROM ubuntu:18.04 AS Jar
 WORKDIR /tmp
 RUN \
-  echo ${DAO_COMMIT_TAG} && \
   echo ${apollo_version} && \
   sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
   sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
