@@ -7,6 +7,8 @@ FROM ubuntu:18.04 AS Jar
 WORKDIR /tmp
 RUN export apollo_version=${DAO_COMMIT_TAG//v/}
 RUN \
+    sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
+    sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
     apt-get update -y && \
     apt-get install curl unzip -y &&  \
     curl -L -o apollo-adminservice.zip https://github.com/ctripcorp/apollo/releases/download/v${apollo_version}/apollo-adminservice-${apollo_version}-github.zip &&  \
