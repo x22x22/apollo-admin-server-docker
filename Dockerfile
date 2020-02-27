@@ -5,6 +5,7 @@
 
 FROM ubuntu:18.04 AS Jar
 WORKDIR /tmp
+ARG apollo_version=1.5.1
 RUN \
   env && \
   echo ${apollo_version} && \
