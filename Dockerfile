@@ -8,10 +8,10 @@ WORKDIR /tmp
 RUN \
   apt-get update -y \
   apt-get install curl unzip -y \
-  curl -L -o apollo-adminservice.zip https://github.com/ctripcorp/apollo/releases/download/v1.5.1/apollo-adminservice-1.5.1-github.zip \
-  curl -L -o apollo-adminservice.zip.sha1 https://github.com/ctripcorp/apollo/releases/download/v1.5.1/apollo-adminservice-1.5.1-github.zip.sha1 \
+  curl -L -o apollo-adminservice.zip https://github.com/ctripcorp/apollo/releases/download/v${apollo_version}/apollo-adminservice-${apollo_version}-github.zip \
+  curl -L -o apollo-adminservice.zip.sha1 https://github.com/ctripcorp/apollo/releases/download/v${apollo_version}/apollo-adminservice-${apollo_version}-github.zip.sha1 \
   unzip ./apollo-adminservice.zip \
-  cp ./apollo-adminservice-1.5.1.jar apollo-adminservice.jar
+  cp ./apollo-adminservice-${apollo_version}.jar apollo-adminservice.jar
 
 FROM openjdk:8-jre-alpine3.8
 
