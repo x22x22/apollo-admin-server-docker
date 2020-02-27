@@ -32,6 +32,8 @@ RUN \
 
 ADD . /apollo-admin-server/
 
+RUN chmod 755 /apollo-portal-server/scripts/startup-kubernetes.sh
+
 ENV APOLLO_ADMIN_SERVICE_NAME="service-apollo-admin-server.sre"
 
 EXPOSE 8090
