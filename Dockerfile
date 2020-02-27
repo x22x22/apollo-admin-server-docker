@@ -5,7 +5,6 @@
 
 FROM ubuntu:18.04 AS Jar
 WORKDIR /tmp
-ENV apollo_version=1.5.1
 RUN \
   echo ${DAO_COMMIT_TAG} && \
   echo ${apollo_version} && \
