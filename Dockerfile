@@ -5,10 +5,10 @@
 
 FROM ubuntu:18.04 AS Jar
 WORKDIR /tmp
-ENV apollo_version=${DAO_COMMIT_TAG//v/}
+ENV apollo_version=1.5.1
 RUN \
-  cat ${DAO_COMMIT_TAG} && \
-  cat ${apollo_version} && \
+  echo ${DAO_COMMIT_TAG} && \
+  echo ${apollo_version} && \
   sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
   sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
   apt-get update -y && \
